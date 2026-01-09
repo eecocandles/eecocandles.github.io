@@ -1,5 +1,5 @@
 /* script.js
-   Dynamic behavior for Ember & Oak site:
+   Dynamic behavior for E&E Co. Candles site:
    - Products stored in one array (edit here to add/remove)
    - Renders product cards into #productsGrid
    - Handles "Order Now" -> opens modal with prefilled mailto or quick order form
@@ -89,7 +89,7 @@ function renderProducts(list) {
         <div class="scent">${escapeHTML(product.scent)}</div>
         <div class="desc">${escapeHTML(product.description)}</div>
         <div class="card-footer">
-          <div class="price">$${escapeHTML(product.price)}</div>
+          <div class="price">R${escapeHTML(product.price)}</div>
           <div>
             <button class="btn ghost btn-details" data-id="${product.id}">Details</button>
             <button class="btn primary btn-order" data-id="${product.id}">Order Now</button>
@@ -131,8 +131,8 @@ function openOrderModal(productId){
 
   // Modal content: product summary and quick order form that uses mailto:
   const subject = encodeURIComponent(`Order: ${product.name}`);
-  const body = encodeURIComponent(`Hello,\n\nI would like to order the following:\n\nProduct: ${product.name}\nScent: ${product.scent}\nPrice: $${product.price}\nQuantity: 1\n\nPlease let me know how to proceed with payment and shipping.\n\nThank you.`);
-  const mailto = `mailto:hello@emberandoak.com?subject=${subject}&body=${body}`;
+  const body = encodeURIComponent(`Hello,\n\nI would like to order the following:\n\nProduct: ${product.name}\nScent: ${product.scent}\nPrice: R${product.price}\nQuantity: 1\n\nPlease let me know how to proceed with payment and shipping.\n\nThank you.`);
+  const mailto = `mailto:ee.cocandles@gmail.com?subject=${subject}&body=${body}`;
 
   modalContent.innerHTML = `
     <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-start;">
@@ -142,7 +142,7 @@ function openOrderModal(productId){
         <div style="color:var(--taupe);margin-bottom:0.5rem;">${escapeHTML(product.scent)}</div>
         <p style="margin:0 0 0.75rem;color:#5e5148;">${escapeHTML(product.description)}</p>
         <div style="display:flex;gap:0.5rem;align-items:center;">
-          <div style="font-weight:600;color:var(--brown);">$${escapeHTML(product.price)}</div>
+          <div style="font-weight:600;color:var(--brown);">R${escapeHTML(product.price)}</div>
           <a href="${mailto}" class="btn primary" style="text-decoration:none;">Order via Email</a>
           <button id="modalCopy" class="btn ghost">Copy Order Text</button>
         </div>
