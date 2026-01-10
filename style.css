@@ -36,6 +36,17 @@ body{
   font-size:16px;
 }
 
+/* ========== Mobile overflow fix ========== */
+html, body {
+  overflow-x: hidden; /* prevent horizontal scrolling on small screens */
+}
+
+/* Ensure media does not overflow container */
+img, video, iframe, svg {
+  max-width: 100%;
+  height: auto;
+}
+
 /* ========== Brand font ONLY for header logo ========== */
 /* Uses Cormorant Garamond — added via Google Fonts in index.html */
 .brand-name{
