@@ -1,82 +1,51 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EECO Candles</title>
-
-  <!-- Brand font: Poppins -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>E&E Co. Candles</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container">
-      <h1 class="brand">EECO Candles</h1>
-      <nav class="site-nav">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/shop">Shop</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/journal">Journal</a></li>
-        </ul>
+      <h1 class="brand">
+        <span class="brand-name">E&amp;E Co. Candles</span>
+      </h1>
+
+      <nav class="contact">
+        <div class="contact-links" aria-label="Contact">
+          <a class="contact-link" href="mailto:hello@eecocandles.com" aria-label="Email E&amp;E Co. Candles">
+            <!-- Email icon (envelope) -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <path d="M3 7.5v9A2.5 2.5 0 0 0 5.5 19h13A2.5 2.5 0 0 0 21 16.5v-9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M21 7.5L12 13 3 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="sr-only">Email</span>
+          </a>
+
+          <a class="contact-link" href="https://instagram.com/eecocandles" target="_blank" rel="noopener" aria-label="E&E Co. Candles on Instagram">
+            <!-- Instagram icon -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M7.5 12a4.5 4.5 0 1 0 9 0 4.5 4.5 0 0 0-9 0z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/>
+            </svg>
+            <span class="sr-only">Instagram</span>
+          </a>
+        </div>
       </nav>
     </div>
   </header>
 
-  <main class="container">
+  <main class="site-main container">
     <section class="hero">
-      <h2>Hand-poured candles made with care</h2>
-      <p>Small batches • Natural wax • Thoughtful scents</p>
+      <p>Hand-poured natural soy candles inspired by calm and comfort.</p>
     </section>
-
-    <!-- Contact area: replaced text links with icon buttons -->
-    <section class="contact">
-      <h3>Contact</h3>
-      <p class="contact-intro">Get in touch with us</p>
-
-      <div class="contact-icons" role="group" aria-label="Contact">
-        <!-- Email -->
-        <a class="icon-btn" href="mailto:hello@eecocandles.com" aria-label="Email EECO Candles">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M3 6.5C3 5.39543 3.89543 4.5 5 4.5H19C20.1046 4.5 21 5.39543 21 6.5V17.5C21 18.6046 20.1046 19.5 19 19.5H5C3.89543 19.5 3 18.6046 3 17.5V6.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M21 6.5L12 13L3 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-
-        <!-- Phone -->
-        <a class="icon-btn" href="tel:+15551234567" aria-label="Call EECO Candles">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M22 16.92V20a1 1 0 0 1-1.11 1C9.6 21.05 2.95 14.4 2 3.11A1 1 0 0 1 3 2h3.09a1 1 0 0 1 1 .75c.12.97.38 2.43.85 3.85a1 1 0 0 1-.21 1L6.1 9.9a16 16 0 0 0 8 8l1.3-1.6a1 1 0 0 1 1-.21c1.42.47 2.88.73 3.85.85a1 1 0 0 1 .75 1V22z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-
-        <!-- Instagram -->
-        <a class="icon-btn" href="https://instagram.com/eecocandles" target="_blank" rel="noopener noreferrer" aria-label="Instagram EECO Candles">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="3" y="3" width="18" height="18" rx="4" ry="4" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M16.5 7.5h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-
-      </div>
-    </section>
-
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> EECO Candles</p>
-    </div>
+  <footer class="site-footer container">
+    <p>&copy; <span id="year">2026</span> E&amp;E Co. Candles</p>
   </footer>
-
-  <script>
-    // Update year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>

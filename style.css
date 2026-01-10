@@ -1,111 +1,57 @@
-/* Base styles and brand font */
-:root{
-  --brand-font: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  --brand-color: #1e1e1e;
-  --muted: #6b6b6b;
-  --accent: #c77d52; /* example accent color */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap');
+
+/* Base layout and reset */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color: #222; background: #fff; }
+.container { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
+
+/* Brand typography: apply Cormorant Garamond only to .brand-name. No text-transform. */
+.brand-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none; /* ensure no uppercase/lowercase forced */
+  color: #111;
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family: var(--brand-font);
-  color:var(--brand-color);
-  background:#fff;
-  line-height:1.5;
+.site-header { border-bottom: 1px solid rgba(0,0,0,0.06); }
+.site-header .container { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+
+/* Contact links: icon-only while preserving spacing/layout */
+.contact-links { display: flex; gap: 12px; align-items: center; }
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #111;
+  background: transparent;
+  transition: background 150ms ease, color 150ms ease;
+}
+.contact-link:hover, .contact-link:focus {
+  background: rgba(0,0,0,0.04);
+  outline: none;
+}
+.contact-link svg { display: block; width: 20px; height: 20px; }
+
+/* Preserve layout spacing for header text */
+.brand { margin: 0; }
+
+/* Accessibility: visually hidden text for screen readers */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
 }
 
-.container{
-  width:100%;
-  max-width:1100px;
-  margin:0 auto;
-  padding:1rem;
-}
+/* Footer and main minimal styles to preserve spacing */
+.site-main { padding: 28px 0; }
+.site-footer { padding: 20px 0; color: #666; font-size: 0.95rem; }
 
-.site-header{
-  border-bottom:1px solid #eee;
-  background: #fff;
-}
-.brand{
-  font-weight:700;
-  font-size:1.5rem;
-  margin:0;
-  letter-spacing:0.4px;
-}
-
-.site-nav ul{
-  list-style:none;
-  padding:0;
-  margin:0;
-  display:flex;
-  gap:1rem;
-}
-.site-nav a{
-  text-decoration:none;
-  color:var(--brand-color);
-}
-
-.hero{
-  padding:3rem 0;
-  text-align:center;
-}
-.hero h2{
-  font-size:2rem;
-  margin:0 0 0.5rem 0;
-}
-
-/* Contact icon buttons */
-.contact{
-  padding:2rem 0;
-}
-.contact h3{
-  margin:0 0 0.5rem 0;
-}
-.contact-intro{
-  color:var(--muted);
-  margin-top:0;
-}
-
-.contact-icons{
-  display:flex;
-  gap:0.75rem;
-  margin-top:0.75rem;
-}
-
-.icon-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:44px;
-  height:44px;
-  border-radius:8px;
-  background:transparent;
-  color:var(--brand-color);
-  text-decoration:none;
-  border:1px solid rgba(0,0,0,0.06);
-  transition:all 160ms ease;
-}
-
-.icon-btn svg{width:20px;height:20px}
-
-.icon-btn:hover,
-.icon-btn:focus{
-  transform:translateY(-2px);
-  box-shadow:0 6px 18px rgba(34,34,34,0.06);
-  border-color:rgba(0,0,0,0.12);
-  outline:none;
-}
-
-/* Make tappable targets larger on small screens */
-@media (max-width:420px){
-  .icon-btn{width:48px;height:48px}
-}
-
-.site-footer{
-  border-top:1px solid #eee;
-  padding:1rem 0;
-  text-align:center;
-  color:var(--muted);
-  font-size:0.95rem;
-}
+/* Ensure no global font-family override to Cormorant Garamond */
+h1:not(.brand-name), h2, h3, p { font-family: inherit; }
