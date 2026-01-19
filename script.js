@@ -82,7 +82,7 @@ function renderProducts(list) {
         <div class="scent">${product.scent}</div>
         <div class="desc">${product.description}</div>
         <div class="card-footer">
-          <div class="price">$${product.price}</div>
+          <div class="price">R${product.price}</div>
           <div>
             <button class="btn ghost btn-details" data-id="${product.id}">Details</button>
             <button class="btn primary btn-order" data-id="${product.id}">Order Now</button>
@@ -116,13 +116,27 @@ function openOrderModal(productId){
   if(!product) return;
   const subject = encodeURIComponent(`Order: ${product.name}`);
   const body = encodeURIComponent(`Hello,\n\nI would like to order the following:\n\nProduct: ${product.name}\nScent: ${product.scent}\nPrice: $${product.price}\nQuantity: 1\n\nPlease let me know how to proceed with payment and shipping.\n\nThank you.`);
-  const mailto = `mailto:hello@emberandoak.com?subject=${subject}&body=${body}`;
-  modalContent.innerHTML = `...`;
+  const mailto = `mailto:ee.cocandles@gmail.com?subject=${subject}&body=${body}`;
+  modalContent.innerHTML = ``
+  <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+    <img src="${product.image}" alt="${product.name}"
+         style="width:160px;height:140px;object-fit:cover;border-radius:10px;">
+    <div style="flex:1;">
+      <h4>${product.name}</h4>
+      <div style="color:#7D5A3C;">${product.scent}</div>
+      <p>${product.description}</p>
+      <strong>R${product.price}</strong>
+      <div style="margin-top:0.8rem;">
+        <a href="${mailto}" class="btn primary">Order via Email</a>
+      </div>
+    </div>
+  </div>
+`;
   orderModal.setAttribute('aria-hidden','false');
   orderModal.classList.add('open');
 }
 
-function closeModal(){ orderModal.setAttribute('aria-hidden','true'); orderModal.classList.remove('open'); modalContent.innerHTML = ''; }
+function closeModal(){ orderModal.setAttribute('aria-hidden','true'); modalContent.innerHTML = ''; orderModal.classList.remove('open'); modalContent.innerHTML = ''; }
 function showDetails(productId){ openOrderModal(productId); }
 modalClose.addEventListener('click', closeModal);
 orderModal.addEventListener('click', (e) => { if(e.target === orderModal) closeModal(); });
