@@ -117,7 +117,7 @@ function openOrderModal(productId){
   const subject = encodeURIComponent(`Order: ${product.name}`);
   const body = encodeURIComponent(`Hello,\n\nI would like to order the following:\n\nProduct: ${product.name}\nScent: ${product.scent}\nPrice: $${product.price}\nQuantity: 1\n\nPlease let me know how to proceed with payment and shipping.\n\nThank you.`);
   const mailto = `mailto:ee.cocandles@gmail.com?subject=${subject}&body=${body}`;
-  modalContent.innerHTML = ``
+  modalContent.innerHTML = `
   <div style="display:flex;gap:1rem;flex-wrap:wrap;">
     <img src="${product.image}" alt="${product.name}"
          style="width:160px;height:140px;object-fit:cover;border-radius:10px;">
