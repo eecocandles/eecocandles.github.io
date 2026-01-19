@@ -136,7 +136,21 @@ function openOrderModal(productId){
   orderModal.classList.add('open');
 }
 
-function closeModal(){ orderModal.setAttribute('aria-hidden','true'); modalContent.innerHTML = ''; orderModal.classList.remove('open'); modalContent.innerHTML = ''; }
+function closeModal(){ orderModal.setAttribute('aria-hidden','true'); mmodalContent.innerHTML = `
+  <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+    <img src="${product.image}" alt="${product.name}"
+         style="width:160px;height:140px;object-fit:cover;border-radius:10px;">
+    <div style="flex:1;">
+      <h4>${product.name}</h4>
+      <div style="color:#7D5A3C;">${product.scent}</div>
+      <p>${product.description}</p>
+      <strong>R${product.price}</strong>
+      <div style="margin-top:0.8rem;">
+        <a href="${mailto}" class="btn primary">Order via Email</a>
+      </div>
+    </div>
+  </div>
+`; orderModal.classList.remove('open'); modalContent.innerHTML = ''; }
 function showDetails(productId){ openOrderModal(productId); }
 modalClose.addEventListener('click', closeModal);
 orderModal.addEventListener('click', (e) => { if(e.target === orderModal) closeModal(); });
